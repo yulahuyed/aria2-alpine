@@ -1,5 +1,7 @@
 FROM alpine:latest
 
+ENV ARIA2_TOKEN YHIBLOG
+
 RUN apk update && \
 	apk --no-cache upgrade && \
 	apk add --no-cache aria2 curl unzip

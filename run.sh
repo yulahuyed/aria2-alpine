@@ -1,4 +1,7 @@
 #!/bin/sh
+
+sed -i "s/yhiblog/${ARIA2_TOKEN}/g" /root/aria2/aria2.conf
+
 if [ ! -f "/root/aria2/aria2.session" ]; then
   touch /root/aria2/aria2.session
 fi

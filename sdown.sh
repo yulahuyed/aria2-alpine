@@ -23,5 +23,7 @@ else
   RCLONE_TYPE=$(cat ~/.config/rclone/rclone.conf | grep -oE '\[.*\]' | sed 's/\[\(.*\)\]/\1/g')
 fi
 
-nohup rclone copy $3 $RCLONE_TYPE: > /dev/null 2>&1 &
 slack "The files have downloaded, ans start to upload.\n$3"
+
+rclone copy $3 $RCLONE_TYPE:
+rm -rf $3

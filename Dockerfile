@@ -14,7 +14,7 @@ RUN curl -o rclone-current-linux-amd64.zip https://downloads.rclone.org/rclone-c
   && rm rclone-current-linux-amd64.zip
 
 ADD aria2.conf /root/aria2/aria2.conf
-ADD *.sh /root/
+ADD *.sh /root/aria2/
 
 RUN chmod -R 777 /root/downloads
 RUN chmod -R 777 /root/aria2
@@ -23,4 +23,4 @@ EXPOSE 6800
 EXPOSE 6881
 EXPOSE 6882
 
-CMD /root/run.sh
+CMD /root/aria2/run.sh

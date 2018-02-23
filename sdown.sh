@@ -14,12 +14,12 @@ then
   exit 0
 fi
 
-if [ ! -f ~/.config/rclone/rclone.conf ]
+if [ ! -f /aria2/rclone.conf ]
 then
   slack "The files have downloaded, but no upload.\n$3"
   exit 0
 else
-  RCLONE_TYPE=$(cat ~/.config/rclone/rclone.conf | grep -oE '\[.*\]' | head -1 | sed 's/\[\(.*\)\]/\1/g')
+  RCLONE_TYPE=$(cat /aria2/rclone.conf | grep -oE '\[.*\]' | head -1 | sed 's/\[\(.*\)\]/\1/g')
 fi
 
 slack "The files have downloaded, and start to upload.\n$3"

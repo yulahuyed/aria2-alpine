@@ -15,10 +15,10 @@ fi
 #  touch /root/aria2/dht.dat
 #fi
 
-if [ "${RCLONE_CONFIG}" ]
+if [ "${RCL_LINK}" ]
 then
 mkdir -p ~/.config/rclone
-curl -L -o ~/.config/rclone/rclone.conf "${RCLONE_CONFIG}" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0"
+curl -L -o ~/.config/rclone/rclone.conf "${RCL_LINK}" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0"
 fi
 
 

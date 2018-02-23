@@ -7,7 +7,6 @@ slack () {
   fi
 } 
 
-echo "$0 $1 $2 $3" >> /root/aria2/sdown.log
 
 if [ $2 -eq 0 ]
 then
@@ -22,6 +21,11 @@ then
 else
   RCLONE_TYPE=$(cat ~/.config/rclone/rclone.conf | grep -oE '\[.*\]' | sed 's/\[\(.*\)\]/\1/g')
 fi
+
+DLPATH="/root/downloads"
+FILEPATH=`echo "$temp" | sed "s#$DLPATH/\(.*\)/.*#\1#"`
+
+if [ $2 -eq 0 ]
 
 slack "The files have downloaded, ans start to upload.\n$3"
 

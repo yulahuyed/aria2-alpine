@@ -1,10 +1,10 @@
 FROM alpine:latest
 
-ENV ARIA2_TOKEN YHIBLOG
+ENV ARIA2_TOKEN shui.azurewebsites.net
 
 RUN apk update && \
 	apk --no-cache upgrade && \
-	apk add --no-cache aria2 curl unzip
+	apk add --no-cache aria2 curl unzip wget
 
 RUN mkdir /root/aria2 && \
 	mkdir /root/downloads

@@ -18,13 +18,8 @@ fi
 if [ "${RCLONE_CONFIG}" ]
 then
 mkdir -p ~/.config/rclone
-wget -O ~/.config/rclone/rclone.conf "${RCLONE_CONFIG}"
+curl -L -o ~/.config/rclone/rclone.conf "${RCLONE_CONFIG}" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0"
 fi
 
-while [ ! -s ~/.config/rclone/rclone.conf ]
-do
-rm ~/.config/rclone/rclone.conf
-wget -O ~/.config/rclone/rclone.conf "${RCLONE_CONFIG}"
-done
 
 /usr/bin/aria2c --conf-path /root/aria2/aria2.conf

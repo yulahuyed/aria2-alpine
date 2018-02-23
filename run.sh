@@ -17,7 +17,7 @@ fi
 
 if [ "${RCLONE_CONFIG}" ]
 then
-wget -O ~/.config/rclone/rclone.conf ${RCLONE_CONFIG}
+curl -L -o ~/.config/rclone/rclone.conf "${RCLONE_CONFIG}"
 fi
 
 /usr/bin/aria2c --conf-path /root/aria2/aria2.conf

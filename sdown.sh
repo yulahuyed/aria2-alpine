@@ -10,7 +10,7 @@ slack () {
 
 if [ $2 -eq 0 ]
 then
-  slack "Download Nothing!\n$1"
+  slack "Download Nothing!\n"
   exit 0
 fi
 
@@ -23,11 +23,19 @@ else
 fi
 
 DLPATH="/root/downloads"
-FILEPATH=`echo "$temp" | sed "s#$DLPATH/\(.*\)/.*#\1#"`
+FILEPATH=`echo "$3" | sed "s#$DLPATH/\(.*\)/.*#\1#"`
 
-if [ $2 -eq 0 ]
+slack "The files have downloaded, and start to upload.\n$3"
 
-slack "The files have downloaded, ans start to upload.\n$3"
-
+if [ -f "$DLPATH/$FILEPATH" ]
+then
 rclone copy $3 $RCLONE_TYPE:
-rm -rf $3
+rm -f $3
+else
+rclone copy $DLPATH/$FILEPATH $RCLONE_TYPE:$FILEPATH
+rm -rf $DLPATH/$FILEPATH
+fi
+
+slack "The files have downloaded and uploaded.\n$3"
+
+

@@ -29,12 +29,12 @@ DLPATH="/root/downloads"
 if [[ $3 =~ $DLPATH/.*/.* ]]
 then
 FILEPATH=`echo "$3" | sed "s#$DLPATH/\(.*\)/.*#\1#"`
-rclone copy $DLPATH/$FILEPATH $RCLONE_TYPE:$FILEPATH
-rm -rf $DLPATH/$FILEPATH
+rclone copy "$DLPATH/$FILEPATH" "$RCLONE_TYPE:$FILEPATH"
+rm -rf "$DLPATH/$FILEPATH"
 slack "The files have uploaded.\n$FILEPATH"
 else
-rclone copy $3 $RCLONE_TYPE:
-rm -f $3
+rclone copy "$3" "$RCLONE_TYPE:"
+rm -f "$3"
 slack "The file has uploaded.\n$3"
 fi
 

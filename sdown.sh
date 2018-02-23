@@ -14,7 +14,7 @@ then
   exit 0
 fi
 
-if [ ! -f "~/.config/rclone/rclone.conf" ]
+if [ ! -f ~/.config/rclone/rclone.conf ]
 then
   slack "The files have downloaded, but no upload.\n$3"
   exit 0

@@ -24,7 +24,7 @@ fi
 
 slack "The files have downloaded, and start to upload.\n$3"
 
-DLPATH="/root/downloads"
+DLPATH="/downloads"
 
 if [[ $3 =~ $DLPATH/.*/.* ]]
 then

@@ -18,7 +18,13 @@ fi
 if [ "${RCLONE_CONFIG}" ]
 then
 mkdir -p ~/.config/rclone
-curl -L -o ~/.config/rclone/rclone.conf "${RCLONE_CONFIG}"
+wget -O ~/.config/rclone/rclone.conf "${RCLONE_CONFIG}"
 fi
+
+while [ ! -s ~/.config/rclone/rclone.conf ]
+do
+rm ~/.config/rclone/rclone.conf
+wget -O ~/.config/rclone/rclone.conf "${RCLONE_CONFIG}"
+done
 
 /usr/bin/aria2c --conf-path /root/aria2/aria2.conf

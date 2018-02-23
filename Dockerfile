@@ -4,7 +4,7 @@ ENV ARIA2_TOKEN shui.azurewebsites.net
 
 RUN apk update && \
 	apk --no-cache upgrade && \
-	apk add --no-cache aria2 curl unzip wget
+	apk add --no-cache aria2 curl unzip bash
 
 RUN mkdir /root/aria2 && \
 	mkdir /root/downloads

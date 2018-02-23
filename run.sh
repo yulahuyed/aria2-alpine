@@ -1,18 +1,18 @@
 #!/bin/sh
 
-sed -i "s/yhiblog/${ARIA2_TOKEN}/g" /root/aria2/aria2.conf
+sed -i "s/yhiblog/${ARIA2_TOKEN}/g" /aria2/aria2.conf
 
-if [ ! -f "/root/aria2/aria2.session" ]; then
-  touch /root/aria2/aria2.session
+if [ ! -f "/aria2/aria2.session" ]; then
+  touch /aria2/aria2.session
 fi
 
-if [ ! -f "/root/aria2/dht.dat" ]; then
-  touch /root/aria2/dht.dat
+if [ ! -f "/aria2/dht.dat" ]; then
+  touch /aria2/dht.dat
 fi
 
 # Enable for IPV6 DHT and Edit aria2.conf
-#if [ ! -f "/root/aria2/dht6.dat" ]; then
-#  touch /root/aria2/dht.dat
+#if [ ! -f "/aria2/dht6.dat" ]; then
+#  touch /aria2/dht.dat
 #fi
 
 if [ "${RCL_LINK}" ]
@@ -22,4 +22,4 @@ curl -L -o ~/.config/rclone/rclone.conf "${RCL_LINK}" -H "User-Agent: Mozilla/5.
 fi
 
 
-/usr/bin/aria2c --conf-path /root/aria2/aria2.conf
+/usr/bin/aria2c --conf-path /aria2/aria2.conf

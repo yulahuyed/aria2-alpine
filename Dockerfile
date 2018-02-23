@@ -1,6 +1,7 @@
 FROM alpine:latest
 
 ENV ARIA2_TOKEN shui.azurewebsites.net
+ENV RCLONE_CONFIG /aria2/rclone.conf
 
 RUN apk update && \
 	apk --no-cache upgrade && \

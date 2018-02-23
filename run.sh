@@ -17,6 +17,7 @@ fi
 
 if [ "${RCLONE_CONFIG}" ]
 then
+mkdir -p ~/.config/rclone
 curl -L -o ~/.config/rclone/rclone.conf "${RCLONE_CONFIG}"
 fi
 

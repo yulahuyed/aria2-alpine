@@ -26,4 +26,6 @@ EXPOSE 6800
 EXPOSE 6881
 EXPOSE 6882
 
+WORKDIR /downloads
+
 CMD /aria2/run.sh

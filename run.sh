@@ -21,4 +21,4 @@ curl -L -o /aria2/rclone.conf "${RCL_LINK}" -H "User-Agent: Mozilla/5.0 (Windows
 fi
 
 
-/usr/bin/aria2c --conf-path /aria2/aria2.conf
+aria2c --conf-path /aria2/aria2.conf
